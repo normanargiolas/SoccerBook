@@ -8,12 +8,12 @@
 
     <item
         android:id="@+id/cerca_campo"
-        android:icon="@mipmap/ic_launcher_foreground"
+        android:icon="@mipmap/menu_campo"
         android:title="Cerca campo" />
 
     <item
         android:id="@+id/cerca_squadra"
-        android:icon="@mipmap/pallone"
+        android:icon="@mipmap/menu_pallone"
         android:title="Cerca squadra" />
 
     <item
