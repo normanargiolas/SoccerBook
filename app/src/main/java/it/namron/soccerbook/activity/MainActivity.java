@@ -1,5 +1,6 @@
-package it.namron.soccerbook;
+package it.namron.soccerbook.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -9,6 +10,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import it.namron.soccerbook.R;
+import static it.namron.soccerbook.constant.Constant.WELCOME_USER_REQUEST;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        homeImg = (ImageView)findViewById(R.id.home_id);
+        homeImg = (ImageView) findViewById(R.id.home_id);
         homeImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,16 +63,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        campoImg = (ImageView)findViewById(R.id.campo_id);
+        campoImg = (ImageView) findViewById(R.id.campo_id);
         campoImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "You clicked on Campo", Toast.LENGTH_LONG).show();
-
+//                Toast.makeText(MainActivity.this, "You clicked on Campo", Toast.LENGTH_LONG).show();
+                showFieldsActivity();
             }
         });
 
-        palloneImg = (ImageView)findViewById(R.id.pallone_id);
+        palloneImg = (ImageView) findViewById(R.id.pallone_id);
         palloneImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        magliaImg = (ImageView)findViewById(R.id.maglia_id);
+        magliaImg = (ImageView) findViewById(R.id.maglia_id);
         magliaImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,9 +95,23 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-
-
-
     }
+
+    private Intent makeFieldsIntent() {
+        Class destinationActivity = FieldsActivity.class;
+        Intent intent = new Intent(getApplicationContext(), destinationActivity);
+        return intent;
+    }
+
+    private void showFieldsActivity() {
+        try {
+            Intent appInfoIntent = makeFieldsIntent();
+            if (appInfoIntent != null)
+                startActivityForResult(appInfoIntent, WELCOME_USER_REQUEST);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

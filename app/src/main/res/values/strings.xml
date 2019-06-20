@@ -3,4 +3,14 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string name="cerca_per_nome_string">cerca per nome</string>
+    <string name="cerca_per_nome_s">nome campo</string>
+
+    <string name="cerca_per_comune_string">cerca per comune</string>
+    <string name="cerca_per_comune_s">nome comune</string>
+
+    <string name="cerca_per_distanza_string">cerca per distanza</string>
+    <string name="cerca_per_distanza_s">selezionare la distanza in KM</string>
+
 </resources>
