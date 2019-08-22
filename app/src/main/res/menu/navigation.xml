@@ -4,22 +4,22 @@
     <item
         android:id="@+id/home"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="Home" />
+        android:name="Home" />
 
     <item
         android:id="@+id/cerca_campo"
         android:icon="@mipmap/menu_campo"
-        android:title="Cerca campo" />
+        android:name="Cerca campo" />
 
     <item
         android:id="@+id/cerca_squadra"
         android:icon="@mipmap/menu_pallone"
-        android:title="Cerca squadra" />
+        android:name="Cerca squadra" />
 
     <item
         android:id="@+id/profilo"
         android:icon="@mipmap/utente"
-        android:title="Profilo" />
+        android:name="Profilo" />
 
 </menu>
 
