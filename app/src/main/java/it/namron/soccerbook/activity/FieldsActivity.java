@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import it.namron.soccerbook.R;
 
@@ -35,6 +36,8 @@ public class FieldsActivity extends AppCompatActivity {
 //                returnIntent.putExtra("result", "Tutto ok");
 //                setResult(Activity.RESULT_OK, returnIntent);
 //                finish();
+                Toast.makeText(FieldsActivity.this, "You clicked on Cerca", Toast.LENGTH_LONG).show();
+
             }
         });
     }
