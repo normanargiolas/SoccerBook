@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                Toast.makeText(MainActivity.this, "You clicked on Campo", Toast.LENGTH_LONG).show();
-                showFieldsActivity();
+                showSearchFieldsActivity();
             }
         });
 
@@ -98,12 +98,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Intent makeFieldsIntent() {
-        Class destinationActivity = FieldsActivity.class;
+        Class destinationActivity = SearchFieldsActivity.class;
         Intent intent = new Intent(getApplicationContext(), destinationActivity);
         return intent;
     }
 
-    private void showFieldsActivity() {
+    private void showSearchFieldsActivity() {
         try {
             Intent appInfoIntent = makeFieldsIntent();
             if (appInfoIntent != null)

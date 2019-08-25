@@ -17,19 +17,25 @@ import it.namron.soccerbook.dto.FieldItemDTO;
 public class FieldItemAdapter extends RecyclerView.Adapter<FieldItemAdapter.FieldItemAdapterViewHolder> {
 
     private final Context mContext;
-    private List<FieldItemDTO> mFieldItemDTO;
+    private List<FieldItemDTO> mFieldListItemDTO;
 
     private FieldItemAdapterListener listener;
 
+    public void populateFields(List<FieldItemDTO> mFieldIListDTO) {
+        this.mFieldListItemDTO = mFieldIListDTO;
+        notifyDataSetChanged();
+    }
+
     public interface FieldItemAdapterListener {
         void onSelectedFieldClicked(int position);
+
         void onInfoFieldClicked(int position);
 
     }
 
-    public FieldItemAdapter(@NonNull Context context, @NonNull FieldItemAdapterListener listener, List<FieldItemDTO> directoryDTO) {
+    public FieldItemAdapter(@NonNull Context context, List<FieldItemDTO> fieldDTO, @NonNull FieldItemAdapterListener listener) {
         this.listener = listener;
-        mFieldItemDTO = directoryDTO;
+        mFieldListItemDTO = fieldDTO;
         mContext = context;
     }
 
@@ -42,12 +48,13 @@ public class FieldItemAdapter extends RecyclerView.Adapter<FieldItemAdapter.Fiel
 
         View view = inflater.inflate(layoutIdForListItem, parentViewGroup, shouldAttachToParentImmediately);
         FieldItemAdapterViewHolder viewHolder = new FieldItemAdapterViewHolder(view);
-        return viewHolder;    }
+        return viewHolder;
+    }
 
     @Override
     public void onBindViewHolder(@NonNull FieldItemAdapterViewHolder fieldItemAdapterViewHolder, int position) {
 
-        FieldItemDTO fieldItem = mFieldItemDTO.get(position);
+        FieldItemDTO fieldItem = mFieldListItemDTO.get(position);
 
         fieldItemAdapterViewHolder.fieldName.setText(fieldItem.getName());
         fieldItemAdapterViewHolder.fieldAddress.setText(fieldItem.getAddress());
@@ -78,7 +85,8 @@ public class FieldItemAdapter extends RecyclerView.Adapter<FieldItemAdapter.Fiel
 
     @Override
     public int getItemCount() {
-        return 0;
+        if (null == mFieldListItemDTO) return 0;
+        return mFieldListItemDTO.size();
     }
 
 
