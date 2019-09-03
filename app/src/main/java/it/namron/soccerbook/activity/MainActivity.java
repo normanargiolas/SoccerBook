@@ -12,13 +12,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import it.namron.soccerbook.R;
+
 import static it.namron.soccerbook.constant.Constant.WELCOME_USER_REQUEST;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
-    private ImageView homeImg;
+    private ImageView prenotazioniImg;
     private ImageView palloneImg;
     private ImageView magliaImg;
     private ImageView campoImg;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.home:
-                    mTextMessage.setText("Home");
+                    showProfiloActivity();
                     return true;
                 case R.id.cerca_campo:
                     mTextMessage.setText("Cerca campo");
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.cerca_squadra:
                     mTextMessage.setText("Cerca squadra");
                     return true;
-                case R.id.profilo:
+                case R.id.prenotazioni:
                     mTextMessage.setText("Profilo");
                     return true;
             }
@@ -54,11 +55,12 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        homeImg = (ImageView) findViewById(R.id.home_id);
-        homeImg.setOnClickListener(new View.OnClickListener() {
+        prenotazioniImg = (ImageView) findViewById(R.id.prenotazioni_id);
+        prenotazioniImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "You clicked on Home", Toast.LENGTH_LONG).show();
+                //Toast.makeText(MainActivity.this, "You clicked on Home", Toast.LENGTH_LONG).show();
+                showPrenotazioniAtivity();
 
             }
         });
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "You clicked on Pallone", Toast.LENGTH_LONG).show();
 
+
             }
         });
 
@@ -85,7 +88,9 @@ public class MainActivity extends AppCompatActivity {
         magliaImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "You clicked on Maglia", Toast.LENGTH_LONG).show();
+                //Toast.makeText(MainActivity.this, "You clicked on Maglia", Toast.LENGTH_LONG).show();
+                showSquadraActivity();
+
 
             }
         });
@@ -103,6 +108,22 @@ public class MainActivity extends AppCompatActivity {
         return intent;
     }
 
+    private Intent makePrenotazioniIntent() {
+        Class prenotazioniActivity = PrenotazioniActivity.class;
+        Intent intent = new Intent(getApplicationContext(), prenotazioniActivity);
+        return intent;
+    }
+
+    private void showPrenotazioniAtivity() {
+        try {
+            Intent appInfoIntent = makePrenotazioniIntent();
+            if (appInfoIntent != null)
+                startActivityForResult(appInfoIntent, WELCOME_USER_REQUEST);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private void showSearchFieldsActivity() {
         try {
             Intent appInfoIntent = makeFieldsIntent();
@@ -113,5 +134,36 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private Intent makeSquadraIntent() {
+        Class destinationActivity = CreaSquadra.class;
+        Intent a = new Intent(getApplicationContext(), destinationActivity);
+        return a;
+    }
+
+    private void showSquadraActivity() {
+        try {
+            Intent appInfoIntent = makeSquadraIntent();
+            if (appInfoIntent != null)
+                startActivityForResult(appInfoIntent, WELCOME_USER_REQUEST);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Intent makeProfiloIntent() {
+        Class destinationActivity = ProfileClass.class;
+        Intent a = new Intent(getApplicationContext(), destinationActivity);
+        return a;
+    }
+
+    private void showProfiloActivity() {
+        try {
+            Intent appInfoIntent = makeProfiloIntent();
+            if (appInfoIntent != null)
+                startActivityForResult(appInfoIntent, WELCOME_USER_REQUEST);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

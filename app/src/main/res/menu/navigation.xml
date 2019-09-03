@@ -3,23 +3,27 @@
 
     <item
         android:id="@+id/home"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@mipmap/home_icon"
         android:name="Home" />
 
     <item
         android:id="@+id/cerca_campo"
-        android:icon="@mipmap/menu_campo"
+        android:icon="@mipmap/maglia_icon"
         android:name="Cerca campo" />
 
     <item
         android:id="@+id/cerca_squadra"
-        android:icon="@mipmap/menu_pallone"
+        android:icon="@mipmap/menu_campo"
         android:name="Cerca squadra" />
+
+    <item
+        android:id="@+id/prenotazioni"
+        android:icon="@mipmap/info_icon"
+        android:name="Prenotazioni" />
 
     <item
         android:id="@+id/profilo"
         android:icon="@mipmap/utente"
         android:name="Profilo" />
-
 </menu>
 
