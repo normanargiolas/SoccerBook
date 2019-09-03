@@ -28,7 +28,7 @@
         tools:src="@drawable/campo1" />
 
     <TextView
-        android:id="@+id/field_btn_select"
+        android:id="@+id/field_btn_cancella"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_small"
@@ -36,12 +36,12 @@
         android:layout_marginEnd="@dimen/margin_small"
         android:layout_marginBottom="@dimen/margin_normal"
         android:background="@android:color/transparent"
-        android:text="Seleziona"
+        android:text="Cancella"
         android:textColor="@color/colorPrimaryDark"
 
         android:textSize="@dimen/msg_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/field_address"
+        app:layout_constraintTop_toBottomOf="@id/field_hour"
 
         />
 
@@ -59,7 +59,7 @@
 
         android:textSize="@dimen/msg_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/field_address" />
+        app:layout_constraintTop_toBottomOf="@id/field_hour" />
 
     <TextView
         android:id="@+id/field_name"
@@ -89,5 +89,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/field_name" />
+
+    <TextView
+        android:id="@+id/field_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:text="Data prenotazione"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/field_address" />
+
+    <TextView
+        android:id="@+id/field_hour"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:text="Ora prenotazione"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/field_date" />
+
 
 </android.support.constraint.ConstraintLayout>

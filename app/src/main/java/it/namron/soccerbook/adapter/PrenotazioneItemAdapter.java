@@ -14,50 +14,52 @@ import java.util.List;
 import it.namron.soccerbook.R;
 import it.namron.soccerbook.dto.PrenotazioneItemDTO;
 
-public class FieldItemCalciatori extends RecyclerView.Adapter<FieldItemCalciatori.FieldItemAdapterViewHolder> {
+public class PrenotazioneItemAdapter extends RecyclerView.Adapter<PrenotazioneItemAdapter.PrenotazioneItemAdapterViewHolder> {
+
 
     private final Context mContext;
-    private List<PrenotazioneItemDTO> mFieldListItemDTO;
+    private List<PrenotazioneItemDTO> mPrenotazioneItemDTO;
 
-    private FieldItemAdapterListener listener;
+    private PrenotazioneItemAdapter.PrenotazioneItemAdapterListener listener;
 
-    public void populateFields(List<PrenotazioneItemDTO> mFieldIListDTO) {
-        this.mFieldListItemDTO = mFieldIListDTO;
+    public void populateFields(List<PrenotazioneItemDTO> mPrenotazioneIListDTO) {
+        this.mPrenotazioneItemDTO = mPrenotazioneIListDTO;
         notifyDataSetChanged();
     }
 
-    public interface FieldItemAdapterListener {
+    public interface PrenotazioneItemAdapterListener {
         void onSelectedFieldClicked(int position);
-
         void onInfoFieldClicked(int position);
-
     }
 
-    public FieldItemCalciatori(@NonNull Context context, List<PrenotazioneItemDTO> fieldDTO, @NonNull FieldItemAdapterListener listener) {
+    public PrenotazioneItemAdapter(@NonNull Context context, List<PrenotazioneItemDTO> fieldDTO, @NonNull PrenotazioneItemAdapter.PrenotazioneItemAdapterListener listener) {
         this.listener = listener;
-        mFieldListItemDTO = fieldDTO;
+        mPrenotazioneItemDTO = fieldDTO;
         mContext = context;
     }
 
     @NonNull
     @Override
-    public FieldItemAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parentViewGroup, int viewType) {
-        int layoutIdForListItem = R.layout.elencocalciatori;
+    public PrenotazioneItemAdapter.PrenotazioneItemAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parentViewGroup, int viewType) {
+        int layoutIdForListItem = R.layout.prenotazione_list_item;
         LayoutInflater inflater = LayoutInflater.from(mContext);
         boolean shouldAttachToParentImmediately = false;
 
         View view = inflater.inflate(layoutIdForListItem, parentViewGroup, shouldAttachToParentImmediately);
-        FieldItemAdapterViewHolder viewHolder = new FieldItemAdapterViewHolder(view);
+        PrenotazioneItemAdapter.PrenotazioneItemAdapterViewHolder viewHolder = new PrenotazioneItemAdapter.PrenotazioneItemAdapterViewHolder(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FieldItemAdapterViewHolder fieldItemAdapterViewHolder, int position) {
+    public void onBindViewHolder(@NonNull PrenotazioneItemAdapter.PrenotazioneItemAdapterViewHolder fieldItemAdapterViewHolder, int position) {
 
-        PrenotazioneItemDTO fieldItem = mFieldListItemDTO.get(position);
+        PrenotazioneItemDTO fieldItem = mPrenotazioneItemDTO.get(position);
 
         fieldItemAdapterViewHolder.fieldName.setText(fieldItem.getName());
         fieldItemAdapterViewHolder.fieldAddress.setText(fieldItem.getAddress());
+
+        fieldItemAdapterViewHolder.fieldData.setText(fieldItem.getData());
+        fieldItemAdapterViewHolder.fieldHour.setText(fieldItem.getHour());
 
         ImageView drawerIcon = new ImageView(mContext);
         drawerIcon.setImageDrawable(fieldItem.getDrawerIcon());
@@ -67,7 +69,7 @@ public class FieldItemCalciatori extends RecyclerView.Adapter<FieldItemCalciator
 
     }
 
-    private void applyClickEvents(FieldItemAdapterViewHolder holder, final int position) {
+    private void applyClickEvents(PrenotazioneItemAdapter.PrenotazioneItemAdapterViewHolder holder, final int position) {
         holder.fieldBtnSelect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,33 +87,39 @@ public class FieldItemCalciatori extends RecyclerView.Adapter<FieldItemCalciator
 
     @Override
     public int getItemCount() {
-        if (null == mFieldListItemDTO) return 0;
-        return mFieldListItemDTO.size();
+        if (null == mPrenotazioneItemDTO) return 0;
+        return mPrenotazioneItemDTO.size();
     }
 
 
-    public class FieldItemAdapterViewHolder extends RecyclerView.ViewHolder {
+    public class PrenotazioneItemAdapterViewHolder extends RecyclerView.ViewHolder {
 
         // Will display the position in the list, ie 0 through getItemCount() - 1
         final TextView fieldAddress;
         final TextView fieldName;
+        final TextView fieldData;
+        final TextView fieldHour;
         final ImageView fieldImageIcon;
 
         final TextView fieldBtnSelect;
         final TextView fieldBtnInfo;
 
 
-        public FieldItemAdapterViewHolder(View itemView) {
+        public PrenotazioneItemAdapterViewHolder(View itemView) {
             super(itemView);
 
             fieldImageIcon = (ImageView) itemView.findViewById(R.id.field_image_icon);
             fieldAddress = (TextView) itemView.findViewById(R.id.field_address);
             fieldName = (TextView) itemView.findViewById(R.id.field_name);
 
-            fieldBtnSelect = (TextView) itemView.findViewById(R.id.field_btn_select);
+            fieldData = (TextView) itemView.findViewById(R.id.field_date);
+            fieldHour = (TextView) itemView.findViewById(R.id.field_hour);
+
+            fieldBtnSelect = (TextView) itemView.findViewById(R.id.field_btn_cancella);
             fieldBtnInfo = (TextView) itemView.findViewById(R.id.field_btn_info);
         }
 
 
     }
+
 }
