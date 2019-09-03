@@ -1,0 +1,116 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="false"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:scrollbarAlwaysDrawVerticalTrack="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/campo1" />
+
+        <TextView
+            android:id="@+id/textNomCampo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="SAN FRANCESCO TEAM"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="26sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textTitInd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Indirizzo"
+
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/textInd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VIA SAN FRANCESCO 42"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+            <TextView
+                android:id="@+id/textCom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quartu S.Elena"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/textTel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tel. 070 123456"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/textTitDesc"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Descrizione"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/textDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Centro di addestramento al calcio dai Piccoli Amici al settore Giovanile. Responsabili tecnici Claudio Cordeddu ...direttore sportivo Serra Stefano"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/textTitSer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Servizi"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/textSer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Il centro di addestramento è munito di tre bagni con doccie annesse con riscaldamento ed idromassaggio per un comfort ottimale dopo una partita emozionante."
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/field_btn_info"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="18dp"-->
+<!--                android:layout_marginEnd="@dimen/margin_small"-->
+<!--                android:layout_marginBottom="@dimen/margin_normal"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:text="Indietro"-->
+<!--                android:textColor="@color/colorPrimaryDark"-->
+
+<!--                android:textSize="@dimen/msg_button" />-->
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

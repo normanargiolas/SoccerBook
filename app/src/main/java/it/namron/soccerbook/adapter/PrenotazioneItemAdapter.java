@@ -28,7 +28,7 @@ public class PrenotazioneItemAdapter extends RecyclerView.Adapter<PrenotazioneIt
     }
 
     public interface PrenotazioneItemAdapterListener {
-        void onSelectedFieldClicked(int position);
+        void onCancelFieldClicked(int position);
         void onInfoFieldClicked(int position);
     }
 
@@ -73,7 +73,7 @@ public class PrenotazioneItemAdapter extends RecyclerView.Adapter<PrenotazioneIt
         holder.fieldBtnSelect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onSelectedFieldClicked(position);
+                listener.onCancelFieldClicked(position);
             }
         });
 

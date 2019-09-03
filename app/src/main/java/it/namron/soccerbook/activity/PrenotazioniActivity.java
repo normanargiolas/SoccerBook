@@ -1,8 +1,11 @@
 package it.namron.soccerbook.activity;
 
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,9 +18,13 @@ import it.namron.soccerbook.R;
 import it.namron.soccerbook.adapter.PrenotazioneItemAdapter;
 import it.namron.soccerbook.dto.PrenotazioneItemDTO;
 
+import static it.namron.soccerbook.constant.Constant.WELCOME_USER_REQUEST;
+
 public class PrenotazioniActivity extends AppCompatActivity implements  PrenotazioneItemAdapter.PrenotazioneItemAdapterListener{
 
     private Toast mToast;
+    AlertDialog.Builder builder;
+
 
     private RecyclerView mRecyclerView;
     private PrenotazioneItemAdapter mPrenotazioneItemAdapter;
@@ -75,24 +82,58 @@ public class PrenotazioniActivity extends AppCompatActivity implements  Prenotaz
     }
 
     @Override
-    public void onSelectedFieldClicked(int position) {
-        if (mToast != null) {
-            mToast.cancel();
-        }
-        String toastMessage = "Item #" + position + " clicked.";
-        mToast = Toast.makeText(PrenotazioniActivity.this, toastMessage, Toast.LENGTH_LONG);
+    public void onCancelFieldClicked(final int position) {
+        builder = new AlertDialog.Builder(this);
+        builder.setMessage("Vuoi cancellare questa prenotazione ?")
+                .setCancelable(false)
+                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+//                        finish();
+                        mPrenotazioneIListDTO.remove(position);
+                        mPrenotazioneItemAdapter.populateFields(mPrenotazioneIListDTO);
 
-        mToast.show();
+
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //  Action for 'NO' Button
+                        dialog.cancel();
+                    }
+                });
+        //Creating dialog box
+        AlertDialog alert = builder.create();
+        //Setting the title manually
+        alert.setTitle("Attenzione");
+        alert.show();
     }
 
     @Override
     public void onInfoFieldClicked(int position) {
-        if (mToast != null) {
-            mToast.cancel();
-        }
-        String toastMessage = "Item #" + position + " clicked.";
-        mToast = Toast.makeText(PrenotazioniActivity.this, toastMessage, Toast.LENGTH_LONG);
+//        if (mToast != null) {
+//            mToast.cancel();
+//        }
+//        String toastMessage = "Info Item #" + position + " clicked.";
+//        mToast = Toast.makeText(PrenotazioniActivity.this, toastMessage, Toast.LENGTH_LONG);
+//
+//        mToast.show();
 
-        mToast.show();
+        showInformazioniAtivity();
+    }
+
+    private Intent makeInformazioniIntent() {
+        Class informazioniCampoActivity = InformazioniCampoActivity.class;
+        Intent intent = new Intent(getApplicationContext(), informazioniCampoActivity);
+        return intent;
+    }
+
+    private void showInformazioniAtivity() {
+        try {
+            Intent appInfoIntent = makeInformazioniIntent();
+            if (appInfoIntent != null)
+                startActivityForResult(appInfoIntent, WELCOME_USER_REQUEST);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
