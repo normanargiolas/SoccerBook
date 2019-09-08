@@ -3,7 +3,6 @@ package it.namron.soccerbook.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
-import android.widget.Toast;
 
 import it.namron.soccerbook.R;
 
@@ -24,35 +23,32 @@ public class CreaSquadra extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.creasquadra);
 
-        buttonID = (Button) findViewById(R.id.button1);
+        buttonID = (Button) findViewById(R.id.visualizza_squadre_btn);
         buttonID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Toast.makeText(CreaSquadra.this, "You clicked on ID", Toast.LENGTH_LONG).show();
-                showSquadraActivity();
+                // Toast.makeText(CreaSquadra.this, "You clicked on ID", Toast.LENGTH_LONG).show();
+                showListaSquadreActivity();
             }
         });
 
-        buttonVicinanze = (Button) findViewById(R.id.button2);
+        buttonVicinanze = (Button) findViewById(R.id.crea_squadre_btn);
         buttonVicinanze.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(CreaSquadra.this, "You clicked on Vicinanze", Toast.LENGTH_LONG).show();
                 showNuovaSquadraActivity();
-
             }
         });
-
-
-
     }
+
     private Intent makeSquadraIntent() {
-        Class destinationActivity = FieldActivityElenco.class;
+        Class destinationActivity = TeamActivityElenco.class;
         Intent a = new Intent(getApplicationContext(), destinationActivity);
         return a;
     }
 
-    private void showSquadraActivity() {
+    private void showListaSquadreActivity() {
         try {
             Intent appInfoIntent = makeSquadraIntent();
             if (appInfoIntent != null)

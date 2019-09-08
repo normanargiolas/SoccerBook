@@ -42,7 +42,7 @@
 
                         android:layout_centerHorizontal="true"
 
-                        android:id="@+id/button1"
+                        android:id="@+id/visualizza_squadre_btn"
                         android:textColor="#ffffff"
                         android:layout_marginTop="10dp"/>
 
@@ -92,7 +92,7 @@
                         android:layout_height="wrap_content"
 
                         android:layout_centerHorizontal="true"
-                        android:id="@+id/button2"
+                        android:id="@+id/crea_squadre_btn"
 
                         android:textColor="#ffffff"
                         android:layout_marginTop="10dp"/>

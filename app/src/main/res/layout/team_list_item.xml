@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:paddingLeft="16dp"
+    android:paddingTop="12dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="12dp">
+
+    <CheckBox
+        android:id="@+id/team_chk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        app:layout_constraintLeft_toRightOf="@+id/team_name" />
+
+    <ImageView
+        android:id="@+id/team_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:src="@mipmap/maglia" />
+
+    <TextView
+        android:id="@+id/team_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Today, April 03"
+        android:textSize="@dimen/msg_text_third"
+        app:layout_constraintLeft_toRightOf="@+id/team_icon"
+        app:layout_constraintTop_toBottomOf="@+id/team_name" />
+
+    <TextView
+        android:id="@+id/team_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:textColor="@color/primaryTextColor"
+        app:layout_constraintLeft_toRightOf="@+id/team_icon"
+        tools:text="Nome della squadra" />
+
+
+</android.support.constraint.ConstraintLayout>

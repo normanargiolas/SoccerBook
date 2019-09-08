@@ -60,7 +60,6 @@ public class FieldsActivity extends AppCompatActivity implements FieldItemAdapte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-
         mRecyclerView = (RecyclerView) findViewById(R.id.app_list_fields_recycler);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -76,6 +75,21 @@ public class FieldsActivity extends AppCompatActivity implements FieldItemAdapte
         mFieldItemAdapter.populateFields(mFieldIListDTO);
     }
 
+    private Intent makeSquadraIntent() {
+        Class destinationActivity = TeamActivityElenco.class;
+        Intent a = new Intent(getApplicationContext(), destinationActivity);
+        return a;
+    }
+
+    private void showListaSquadreActivity() {
+        try {
+            Intent appInfoIntent = makeSquadraIntent();
+            if (appInfoIntent != null)
+                startActivityForResult(appInfoIntent, WELCOME_USER_REQUEST);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * This method is used to notify from onBindViewHolder that implement
@@ -84,14 +98,12 @@ public class FieldsActivity extends AppCompatActivity implements FieldItemAdapte
     @Override
     public void onSelectedFieldClicked(int position) {
 
-        if (mToast != null) {
-            mToast.cancel();
-        }
-        String toastMessage = "Item #" + position + " clicked.";
-        mToast = Toast.makeText(FieldsActivity.this, toastMessage, Toast.LENGTH_LONG);
-
-        mToast.show();
-
+//        if (mToast != null) {
+//            mToast.cancel();
+//        }
+//        String toastMessage = "Item #" + position + " clicked.";
+//        mToast = Toast.makeText(FieldsActivity.this, toastMessage, Toast.LENGTH_LONG);
+//        mToast.show();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Vuoi associare una squadra al campo?")
@@ -99,6 +111,9 @@ public class FieldsActivity extends AppCompatActivity implements FieldItemAdapte
                 .setPositiveButton("Si", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //todo visualizza la lista delle squadre, si seleziona e torna alla home
+                        showListaSquadreActivity();
+
+
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -113,8 +128,6 @@ public class FieldsActivity extends AppCompatActivity implements FieldItemAdapte
         //Setting the title manually
         alert.setTitle("Completa la registrazione");
         alert.show();
-
-
 
     }
 

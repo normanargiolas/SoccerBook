@@ -80,8 +80,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Toast.makeText(MainActivity.this, "You clicked on Pallone", Toast.LENGTH_LONG).show();
                 showPreferitiActivity();
-
-
             }
         });
 
@@ -91,8 +89,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Toast.makeText(MainActivity.this, "You clicked on Maglia", Toast.LENGTH_LONG).show();
                 showSquadraActivity();
-
-
             }
         });
 
