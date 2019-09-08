@@ -1,8 +1,10 @@
 package it.namron.soccerbook.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -84,7 +86,7 @@ public class FieldActivityElenco extends AppCompatActivity implements FieldItemA
         if (mToast != null) {
             mToast.cancel();
         }
-        String toastMessage = "Item #" + position + " clicked.";
+        String toastMessage = "Item #" + position + " clicked FieldActivityElenco.";
         mToast = Toast.makeText(FieldActivityElenco.this, toastMessage, Toast.LENGTH_LONG);
 
         mToast.show();

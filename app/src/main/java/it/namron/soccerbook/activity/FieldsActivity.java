@@ -1,9 +1,11 @@
 package it.namron.soccerbook.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -89,6 +91,31 @@ public class FieldsActivity extends AppCompatActivity implements FieldItemAdapte
         mToast = Toast.makeText(FieldsActivity.this, toastMessage, Toast.LENGTH_LONG);
 
         mToast.show();
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Vuoi associare una squadra al campo?")
+                .setCancelable(false)
+                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //todo visualizza la lista delle squadre, si seleziona e torna alla home
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                        finish();
+
+                    }
+                });
+        //Creating dialog box
+        AlertDialog alert = builder.create();
+        //Setting the title manually
+        alert.setTitle("Completa la registrazione");
+        alert.show();
+
+
+
     }
 
     /**

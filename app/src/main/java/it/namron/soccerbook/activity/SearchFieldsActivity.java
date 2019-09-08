@@ -107,15 +107,15 @@ public class SearchFieldsActivity extends AppCompatActivity {
             }
 
             private void showdialogBox(String infoText, View view) {
-                builder = new AlertDialog.Builder(view.getContext());
-                builder.setMessage(infoText)
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(view.getContext());
+                dialogBuilder.setMessage(infoText)
                         .setCancelable(false)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                             }
                         });
                 //Creating dialog box
-                AlertDialog alert = builder.create();
+                AlertDialog alert = dialogBuilder.create();
                 //Setting the title manually
                 alert.setTitle("Attenzione");
                 alert.show();
