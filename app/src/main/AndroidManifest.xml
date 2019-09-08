@@ -35,6 +35,54 @@
                 android:value=".activity.MainActivity" />
         </activity>
 
+        <activity android:name=".activity.LoginActivity"
+            android:parentActivityName=".activity.MainActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+        </activity>
+
+        <activity android:name=".activity.ShowResultsActivity"
+            android:parentActivityName=".activity.MainActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+        </activity>
+
+        <activity android:name=".activity.InviaDatiActivity"
+            android:parentActivityName=".activity.MainActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+        </activity>
+
+        <activity android:name=".activity.RecuperoDatiActivity"
+            android:parentActivityName=".activity.MainActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+        </activity>
+
+        <activity android:name=".activity.RegistrazioneActivity"
+            android:parentActivityName=".activity.MainActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+        </activity>
+
+        <activity android:name=".activity.RegistratiActivity"
+            android:parentActivityName=".activity.MainActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+        </activity>
+
         <activity android:name=".activity.InformazioniCampoActivity"
             android:parentActivityName=".activity.MainActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
@@ -84,6 +132,41 @@
         </activity>
 
         <activity android:name=".activity.CreaNuovaSquadra"
+            android:parentActivityName=".activity.MainActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+        </activity>
+        <activity android:name=".activity.ListCampi"
+            android:parentActivityName=".activity.MainActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+        </activity>
+        <activity android:name=".activity.InformazioniSquadra"
+            android:parentActivityName=".activity.MainActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+        </activity>
+        <activity android:name=".activity.InformazioniPrenotazioni"
+            android:parentActivityName=".activity.MainActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+        </activity>
+        <activity android:name=".activity.ListPreferiti"
+            android:parentActivityName=".activity.MainActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+        </activity>
+        <activity android:name=".activity.InformazioniPreferiti"
             android:parentActivityName=".activity.MainActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data

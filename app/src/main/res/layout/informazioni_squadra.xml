@@ -1,0 +1,101 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="false"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:scrollbarAlwaysDrawVerticalTrack="true">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="308dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/team" />
+
+        <TextView
+            android:id="@+id/textNomCampo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Millenium BUG"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="26sp" />
+
+
+        <TextView
+            android:id="@+id/textTitInd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Componenti"
+
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textInd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giancarlo"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+        <TextView
+            android:id="@+id/textCom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Luciano"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/textTel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mariano"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/textDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Luca"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/textSer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Luigi"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/field_btn_info"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="18dp"-->
+        <!--                android:layout_marginEnd="@dimen/margin_small"-->
+        <!--                android:layout_marginBottom="@dimen/margin_normal"-->
+        <!--                android:background="@android:color/transparent"-->
+        <!--                android:text="Indietro"-->
+        <!--                android:textColor="@color/colorPrimaryDark"-->
+
+        <!--                android:textSize="@dimen/msg_button" />-->
+
+
+    </LinearLayout>
+
+</ScrollView>
+
+
+
+
+
+
+

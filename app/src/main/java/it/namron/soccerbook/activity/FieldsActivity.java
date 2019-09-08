@@ -106,7 +106,7 @@ public class FieldsActivity extends AppCompatActivity implements FieldItemAdapte
 //        mToast.show();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Vuoi associare una squadra al campo?")
+        builder.setMessage("Vuoi associare una squadra alla prenotazione?")
                 .setCancelable(false)
                 .setPositiveButton("Si", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -118,15 +118,14 @@ public class FieldsActivity extends AppCompatActivity implements FieldItemAdapte
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                        finish();
+                        showPrenotazioneAtivity();
 
                     }
                 });
         //Creating dialog box
         AlertDialog alert = builder.create();
         //Setting the title manually
-        alert.setTitle("Completa la registrazione");
+        alert.setTitle("Completa la prenotazione");
         alert.show();
 
     }
@@ -151,6 +150,22 @@ public class FieldsActivity extends AppCompatActivity implements FieldItemAdapte
     private void showInformazioniAtivity() {
         try {
             Intent appInfoIntent = makeInformazioniIntent();
+            if (appInfoIntent != null)
+                startActivityForResult(appInfoIntent, WELCOME_USER_REQUEST);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Intent makePrenotazioneIntent() {
+        Class informazioniCampoActivity = InformazioniPrenotazioni.class;
+        Intent intent = new Intent(getApplicationContext(), informazioniCampoActivity);
+        return intent;
+    }
+
+    private void showPrenotazioneAtivity() {
+        try {
+            Intent appInfoIntent = makePrenotazioneIntent();
             if (appInfoIntent != null)
                 startActivityForResult(appInfoIntent, WELCOME_USER_REQUEST);
         } catch (Exception e) {

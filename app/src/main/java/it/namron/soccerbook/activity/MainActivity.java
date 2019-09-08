@@ -13,10 +13,13 @@ import android.widget.Toast;
 
 import it.namron.soccerbook.R;
 
+import static it.namron.soccerbook.constant.Constant.LOGIN_EXTRA;
 import static it.namron.soccerbook.constant.Constant.WELCOME_USER_REQUEST;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    boolean LOGIN = false;
 
     private TextView mTextMessage;
     private ImageView prenotazioniImg;
@@ -34,19 +37,23 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.home:
                     showProfiloActivity();
                     return true;
-                case R.id.cerca_campo:
-                    mTextMessage.setText("Cerca campo");
-                    return true;
-                case R.id.cerca_squadra:
-                    mTextMessage.setText("Cerca squadra");
-                    return true;
                 case R.id.prenotazioni:
-                    mTextMessage.setText("Profilo");
+                    showPrenotazioniAtivity();
+                    return true;
+                case R.id.campo_id:
+                    showSearchFieldsActivity();
+                    return true;
+                case R.id.maglia_id:
+                    showSquadraActivity();
+                    return true;
+                case R.id.profilo:
+                    showProfiloActivity();
                     return true;
             }
             return false;
         }
     };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,13 +62,19 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        checkLogin();
+
+
         prenotazioniImg = (ImageView) findViewById(R.id.home_id);
         prenotazioniImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(MainActivity.this, "You clicked on Home", Toast.LENGTH_LONG).show();
-                showPrenotazioniAtivity();
-
+                if (LOGIN) {
+                    showPrenotazioniAtivity();
+                } else {
+                    showLoginAtivity();
+                }
             }
         });
 
@@ -70,7 +83,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                Toast.makeText(MainActivity.this, "You clicked on Campo", Toast.LENGTH_LONG).show();
-                showSearchFieldsActivity();
+                if (LOGIN) {
+                    showSearchFieldsActivity();
+                } else {
+                    showLoginAtivity();
+                }
             }
         });
 
@@ -79,7 +96,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(MainActivity.this, "You clicked on Pallone", Toast.LENGTH_LONG).show();
-                showPreferitiActivity();
+                if (LOGIN) {
+                    showPreferitiActivity();
+                } else {
+                    showLoginAtivity();
+                }
             }
         });
 
@@ -88,7 +109,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(MainActivity.this, "You clicked on Maglia", Toast.LENGTH_LONG).show();
-                showSquadraActivity();
+                if (LOGIN) {
+                    showSquadraActivity();
+                } else {
+                    showLoginAtivity();
+                }
             }
         });
 
@@ -97,6 +122,13 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+    }
+
+    private void checkLogin() {
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            LOGIN = bundle.getBoolean(LOGIN_EXTRA);
+        }
     }
 
     private Intent makeFieldsIntent() {
@@ -124,6 +156,22 @@ public class MainActivity extends AppCompatActivity {
     private void showSearchFieldsActivity() {
         try {
             Intent appInfoIntent = makeFieldsIntent();
+            if (appInfoIntent != null)
+                startActivityForResult(appInfoIntent, WELCOME_USER_REQUEST);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Intent makeLoginIntent() {
+        Class destinationActivity = LoginActivity.class;
+        Intent a = new Intent(getApplicationContext(), destinationActivity);
+        return a;
+    }
+
+    private void showLoginAtivity() {
+        try {
+            Intent appInfoIntent = makeLoginIntent();
             if (appInfoIntent != null)
                 startActivityForResult(appInfoIntent, WELCOME_USER_REQUEST);
         } catch (Exception e) {
@@ -164,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Intent makePreferitiIntent() {
-        Class destinationActivity = FieldsActivity.class;
+        Class destinationActivity = ListPreferiti.class;
         Intent intent = new Intent(getApplicationContext(), destinationActivity);
         return intent;
     }

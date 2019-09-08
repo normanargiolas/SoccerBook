@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDF3FB"
+    tools:context=".RegistratiActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:orientation="vertical">
+
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ERRORE"
+                    android:id="@+id/errore"
+                    android:gravity="center"
+                    android:textSize="30dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:layout_marginTop="30dp"
+                    android:textSize="18dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#fff"
+                    android:id="@+id/email"/>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Password"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#fff"
+                    android:id="@+id/password"
+                    android:inputType="textPassword"/>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Conferma Password"
+                    android:textSize="18dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#fff"
+                    android:id="@+id/rpassword"
+                    android:inputType="textPassword"/>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/registrati"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginRight="90dp"
+                    android:text="Registrati"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:textColor="#E4EDFA"
+                    android:layout_marginBottom="20dp"
+                    android:textSize="18dp" />
+                />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

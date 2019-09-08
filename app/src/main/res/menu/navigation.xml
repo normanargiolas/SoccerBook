@@ -2,28 +2,33 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home1"
-        android:icon="@mipmap/home"
-        android:name="Home" />
-
-    <item
-        android:id="@+id/cerca_campo"
-        android:icon="@mipmap/calendar"
-        android:name="Cerca campo" />
-
-    <item
-        android:id="@+id/cerca_squadra"
-        android:icon="@mipmap/menu_campo"
-        android:name="Cerca squadra" />
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        android:name="Home"
+        android:title="HOME"/>
 
     <item
         android:id="@+id/prenotazioni"
+        android:icon="@mipmap/calendar"
+        android:name="Cerca campo"
+        android:title="PRENOTAZIONI"/>
+
+    <item
+        android:id="@+id/campo_id"
+        android:icon="@mipmap/menu_campo"
+        android:name="Cerca squadra"
+        android:title="CERCA CAMPO"/>
+
+    <item
+        android:id="@+id/maglia_id"
         android:icon="@mipmap/maglia_icon2"
-        android:name="Prenotazioni" />
+        android:name="Prenotazioni"
+        android:title="FORMA SQUADRA"
+        />
 
     <item
         android:id="@+id/profilo"
         android:icon="@mipmap/utente"
-        android:name="Profilo" />
+        android:name="Profilo"
+        android:title="PROFILO" />
 </menu>
-

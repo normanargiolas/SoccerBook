@@ -1,0 +1,136 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="false"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:scrollbarAlwaysDrawVerticalTrack="true">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/campo1" />
+
+        <TextView
+            android:id="@+id/textNomCampo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Prenotazione effettuata "
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="26sp" />
+
+
+        <TextView
+            android:id="@+id/textTitInd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Campo"
+
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textInd4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SAN FRANCESCO TEAM"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+        <TextView
+            android:id="@+id/textTitInd2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Indirizzo"
+
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textInd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VIA SAN FRANCESCO 42"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/textCom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quartu S.Elena"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/textTel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tel. 070 123456"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/textTitDesc"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Data"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2019-09-20"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/textTitSer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Ora"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textSer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="17:00"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/textTitSer5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Team"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textSer10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MilleniumBUG"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+    </LinearLayout>
+
+</ScrollView>
+
+
+
+
+
+
+

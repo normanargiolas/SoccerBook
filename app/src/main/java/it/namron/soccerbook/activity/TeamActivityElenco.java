@@ -1,4 +1,5 @@
 package it.namron.soccerbook.activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
@@ -14,6 +15,8 @@ import java.util.List;
 import it.namron.soccerbook.R;
 import it.namron.soccerbook.adapter.TeamItemAdapter;
 import it.namron.soccerbook.dto.TeamItemDTO;
+
+import static it.namron.soccerbook.constant.Constant.WELCOME_USER_REQUEST;
 
 public class TeamActivityElenco extends AppCompatActivity implements TeamItemAdapter.TeamItemAdapterListener {
 
@@ -47,7 +50,11 @@ public class TeamActivityElenco extends AppCompatActivity implements TeamItemAda
         mTeamSelected.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+
+
+                showPrenotazioneAtivity();
+
+
             }
         });
 
@@ -55,6 +62,23 @@ public class TeamActivityElenco extends AppCompatActivity implements TeamItemAda
         //Ottiene la lista dei campi
         prepareListOfTeam();
         mTeamItemAdapter.populateFields(mTeamIListDTO);
+    }
+
+
+    private Intent makePrenotazioneIntent() {
+        Class informazioniCampoActivity = InformazioniPrenotazioni.class;
+        Intent intent = new Intent(getApplicationContext(), informazioniCampoActivity);
+        return intent;
+    }
+
+    private void showPrenotazioneAtivity() {
+        try {
+            Intent appInfoIntent = makePrenotazioneIntent();
+            if (appInfoIntent != null)
+                startActivityForResult(appInfoIntent, WELCOME_USER_REQUEST);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void prepareListOfTeam() {

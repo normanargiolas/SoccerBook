@@ -29,6 +29,9 @@ public class CreaSquadra extends AppCompatActivity {
             public void onClick(View v) {
                 // Toast.makeText(CreaSquadra.this, "You clicked on ID", Toast.LENGTH_LONG).show();
                 showListaSquadreActivity();
+
+
+
             }
         });
 
@@ -43,7 +46,7 @@ public class CreaSquadra extends AppCompatActivity {
     }
 
     private Intent makeSquadraIntent() {
-        Class destinationActivity = TeamActivityElenco.class;
+        Class destinationActivity = ListCampi.class;
         Intent a = new Intent(getApplicationContext(), destinationActivity);
         return a;
     }

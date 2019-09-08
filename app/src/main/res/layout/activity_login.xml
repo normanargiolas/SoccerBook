@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:shape="rectangle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.LoginActivity">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="245dp"
+            android:background="#4A89DC" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="40dp"
+                    android:textColor="#E4EDFA"
+                    android:layout_marginRight="-40dp"
+                    android:text="SoccerBook" />
+
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="-56dp"
+                    android:layout_marginLeft="-110dp"
+                    android:background="@mipmap/ball" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Description"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="#EDF3FB"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:orientation="vertical">
+
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ERRORE"
+                    android:id="@+id/errore"
+                    android:gravity="center"
+                    android:textSize="30dp"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:layout_marginTop="30dp"
+                    android:textSize="18dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#fff"
+                    android:id="@+id/email"/>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Password"
+                    android:textSize="18dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#fff"
+                    android:id="@+id/password"
+                    android:inputType="textPassword"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hai dimenticato i dati di accesso?"
+                    android:textSize="13dp"
+                    android:layout_marginTop="10px"
+                    android:id="@+id/accesso"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Registrati"
+                    android:textSize="13dp"
+                    android:layout_marginTop="10px"
+                    android:id="@+id/registrazione"/>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/accedi"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginRight="100dp"
+                    android:text="Accedi"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:textColor="#E4EDFA"
+                    android:textSize="18dp" />
+                />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
