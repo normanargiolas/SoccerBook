@@ -36,7 +36,7 @@
                     android:layout_height="50dp">
 
                     <Button
-                        android:text="Cerca per ID"
+                        android:text="Le tue squadre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
@@ -87,7 +87,7 @@
                     android:layout_height="50dp">
 
                     <Button
-                        android:text="Cerca nelle vicinanze"
+                        android:text="Crea squadra"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
@@ -96,56 +96,6 @@
 
                         android:textColor="#ffffff"
                         android:layout_marginTop="10dp"/>
-
-                </RelativeLayout>
-
-
-            </LinearLayout>
-
-        </ScrollView>
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:background="#fff"
-        android:elevation="4dp"
-        android:orientation="vertical"
-        android:padding="5dp">
-
-
-        <ScrollView
-            android:id="@+id/cerca_per_distanza_scrol"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:id="@+id/BottoneContatti"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="10dp">
-
-
-                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_width="fill_parent"
-                    android:layout_height="50dp">
-
-                    <Button
-
-                        android:text="Cerca contatti"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        android:id="@+id/button3"
-
-                        android:textColor="#ffffff"/>
 
                 </RelativeLayout>
 

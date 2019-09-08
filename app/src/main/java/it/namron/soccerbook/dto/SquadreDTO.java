@@ -6,9 +6,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.widget.Button;
 
-public class FieldItemDTO implements Parcelable {
+public class SquadreDTO implements Parcelable {
 
     private int id;
     private String name;
@@ -16,10 +15,10 @@ public class FieldItemDTO implements Parcelable {
     private Drawable drawerIcon;
     private Drawable star;
 
-    public FieldItemDTO() {
+    public SquadreDTO() {
     }
 
-    protected FieldItemDTO(Parcel in) {
+    protected SquadreDTO(Parcel in) {
         id = in.readInt();
         name = in.readString();
         address = in.readString();
@@ -39,15 +38,15 @@ public class FieldItemDTO implements Parcelable {
         }
     }
 
-    public static final Creator<FieldItemDTO> CREATOR = new Creator<FieldItemDTO>() {
+    public static final Creator<SquadreDTO> CREATOR = new Creator<SquadreDTO>() {
         @Override
-        public FieldItemDTO createFromParcel(Parcel in) {
-            return new FieldItemDTO(in);
+        public SquadreDTO createFromParcel(Parcel in) {
+            return new SquadreDTO(in);
         }
 
         @Override
-        public FieldItemDTO[] newArray(int size) {
-            return new FieldItemDTO[size];
+        public SquadreDTO[] newArray(int size) {
+            return new SquadreDTO[size];
         }
     };
 

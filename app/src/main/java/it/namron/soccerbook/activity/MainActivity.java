@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        prenotazioniImg = (ImageView) findViewById(R.id.prenotazioni_id);
+        prenotazioniImg = (ImageView) findViewById(R.id.home_id);
         prenotazioniImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
         palloneImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "You clicked on Pallone", Toast.LENGTH_LONG).show();
+                //Toast.makeText(MainActivity.this, "You clicked on Pallone", Toast.LENGTH_LONG).show();
+                showPreferitiActivity();
 
 
             }
@@ -165,5 +166,22 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    private Intent makePreferitiIntent() {
+        Class destinationActivity = FieldsActivity.class;
+        Intent intent = new Intent(getApplicationContext(), destinationActivity);
+        return intent;
+    }
+
+    private void showPreferitiActivity() {
+        try {
+            Intent appInfoIntent = makePreferitiIntent();
+            if (appInfoIntent != null)
+                startActivityForResult(appInfoIntent, WELCOME_USER_REQUEST);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

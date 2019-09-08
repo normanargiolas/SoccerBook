@@ -40,7 +40,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentBottom="true"
-                        android:src="@mipmap/campo_v"/>
+                        android:src="@mipmap/campo_v" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -60,15 +60,6 @@
                     android:layout_height="50dp">
 
 
-                    <ImageView
-                        android:id="@+id/lente_nome_image_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
-                        android:src="@mipmap/lente"/>
-
-
                     <AutoCompleteTextView
                         android:id="@+id/cerca_per_nome_text"
                         android:layout_width="fill_parent"
@@ -78,6 +69,15 @@
                         android:drawableTint="#565656"
                         android:hint="@string/cerca_per_nome_s"
                         android:singleLine="true" />
+
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/lente_nome_image_view"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentRight="true"-->
+<!--                        android:layout_alignParentBottom="true"-->
+<!--                        android:src="@mipmap/lente" />-->
 
                 </RelativeLayout>
 
@@ -123,7 +123,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentBottom="true"
-                        android:src="@mipmap/comune"/>
+                        android:src="@mipmap/comune" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -133,7 +133,7 @@
                         android:layout_marginLeft="50dp"
 
                         android:paddingTop="5dp"
-                        android:text="@string/cerca_per_comune_string"
+                        android:text="@string/seleziona_data"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 </RelativeLayout>
@@ -143,17 +143,8 @@
                     android:layout_height="50dp">
 
 
-                    <ImageView
-                        android:id="@+id/lente_comune_image_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
-                        android:src="@mipmap/lente"/>
-
-
                     <AutoCompleteTextView
-                        android:id="@+id/cerca_per_comune_text"
+                        android:id="@+id/cerca_per_data_text"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
@@ -161,6 +152,15 @@
                         android:drawableTint="#565656"
                         android:hint="@string/cerca_per_comune_s"
                         android:singleLine="true" />
+
+
+                    <ImageView
+                        android:id="@+id/lente_comune_image_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:src="@mipmap/lente" />
 
                 </RelativeLayout>
 
@@ -206,7 +206,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentBottom="true"
-                        android:src="@mipmap/distanza"/>
+                        android:src="@mipmap/distanza" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -216,7 +216,7 @@
                         android:layout_marginLeft="50dp"
 
                         android:paddingTop="5dp"
-                        android:text="@string/cerca_per_distanza_string"
+                        android:text="@string/seleziona_orario"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 </RelativeLayout>
@@ -226,17 +226,8 @@
                     android:layout_height="50dp">
 
 
-                    <ImageView
-                        android:id="@+id/lente_distanza_image_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
-                        android:src="@mipmap/lente"/>
-
-
                     <AutoCompleteTextView
-                        android:id="@+id/cerca_per_distanza_text"
+                        android:id="@+id/cerca_per_orario_text"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
@@ -245,10 +236,51 @@
                         android:hint="@string/cerca_per_distanza_s"
                         android:singleLine="true" />
 
+
+                    <ImageView
+                        android:id="@+id/lente_distanza_image_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:src="@mipmap/lente" />
+
                 </RelativeLayout>
 
 
             </LinearLayout>
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#fff"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+
+        <ScrollView
+            android:id="@+id/cerca_campo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/cerca_campo_btn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="Cerca"
+                android:background="@android:color/transparent"
+                android:textColor="@color/colorPrimaryDark" />
 
         </ScrollView>
 

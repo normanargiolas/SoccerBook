@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home"
-        android:icon="@mipmap/home_icon"
+        android:id="@+id/home1"
+        android:icon="@mipmap/home"
         android:name="Home" />
 
     <item
         android:id="@+id/cerca_campo"
-        android:icon="@mipmap/maglia_icon"
+        android:icon="@mipmap/calendar"
         android:name="Cerca campo" />
 
     <item
@@ -18,7 +18,7 @@
 
     <item
         android:id="@+id/prenotazioni"
-        android:icon="@mipmap/info_icon"
+        android:icon="@mipmap/maglia_icon2"
         android:name="Prenotazioni" />
 
     <item

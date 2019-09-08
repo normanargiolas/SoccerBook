@@ -1,5 +1,6 @@
 package it.namron.soccerbook.activity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -14,6 +15,8 @@ import java.util.List;
 import it.namron.soccerbook.R;
 import it.namron.soccerbook.adapter.FieldItemAdapter;
 import it.namron.soccerbook.dto.FieldItemDTO;
+
+import static it.namron.soccerbook.constant.Constant.WELCOME_USER_REQUEST;
 
 public class FieldsActivity extends AppCompatActivity implements FieldItemAdapter.FieldItemAdapterListener {
 
@@ -95,13 +98,24 @@ public class FieldsActivity extends AppCompatActivity implements FieldItemAdapte
     @Override
     public void onInfoFieldClicked(int position) {
 
-        if (mToast != null) {
-            mToast.cancel();
-        }
-        String toastMessage = "Item #" + position + " clicked.";
-        mToast = Toast.makeText(FieldsActivity.this, toastMessage, Toast.LENGTH_LONG);
+        showInformazioniAtivity();
+    }
 
-        mToast.show();
+
+    private Intent makeInformazioniIntent() {
+        Class informazioniCampoActivity = InformazioniCampoActivity.class;
+        Intent intent = new Intent(getApplicationContext(), informazioniCampoActivity);
+        return intent;
+    }
+
+    private void showInformazioniAtivity() {
+        try {
+            Intent appInfoIntent = makeInformazioniIntent();
+            if (appInfoIntent != null)
+                startActivityForResult(appInfoIntent, WELCOME_USER_REQUEST);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

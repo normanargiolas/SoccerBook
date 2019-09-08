@@ -1,5 +1,6 @@
 package it.namron.soccerbook.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,8 @@ import java.util.List;
 import it.namron.soccerbook.R;
 import it.namron.soccerbook.adapter.FieldItemAdapter;
 import it.namron.soccerbook.dto.FieldItemDTO;
+
+import static it.namron.soccerbook.constant.Constant.WELCOME_USER_REQUEST;
 
 public class FieldActivityElenco extends AppCompatActivity implements FieldItemAdapter.FieldItemAdapterListener {
 
@@ -29,20 +32,20 @@ public class FieldActivityElenco extends AppCompatActivity implements FieldItemA
         FieldItemDTO fieldItem;
 
         fieldItem = new FieldItemDTO();
-        fieldItem.setName("Campo 1");
-        fieldItem.setAddress("Address Campo 1");
+        fieldItem.setName("Squadra1");
+        fieldItem.setAddress("Componenti squadra 1");
         fieldItem.setDrawerIcon(ContextCompat.getDrawable(this, R.drawable.campo1));
 
         mFieldIListDTO.add(fieldItem);
 
         fieldItem = new FieldItemDTO();
-        fieldItem.setName("Campo 2");
+        fieldItem.setName("Squadra 2");
         fieldItem.setAddress("Address Campo 2");
         fieldItem.setDrawerIcon(ContextCompat.getDrawable(this, R.drawable.campo1));
         mFieldIListDTO.add(fieldItem);
 
         fieldItem = new FieldItemDTO();
-        fieldItem.setName("Campo 3");
+        fieldItem.setName("Squadra 3");
         fieldItem.setAddress("Address Campo 3");
         fieldItem.setDrawerIcon(ContextCompat.getDrawable(this, R.drawable.campo1));
         mFieldIListDTO.add(fieldItem);
@@ -94,13 +97,23 @@ public class FieldActivityElenco extends AppCompatActivity implements FieldItemA
     @Override
     public void onInfoFieldClicked(int position) {
 
-        if (mToast != null) {
-            mToast.cancel();
-        }
-        String toastMessage = "Item #" + position + " clicked.";
-        mToast = Toast.makeText(FieldActivityElenco.this, toastMessage, Toast.LENGTH_LONG);
-
-        mToast.show();
+        showInformazioniAtivity();
     }
 
+
+    private Intent makeInformazioniIntent() {
+        Class informazioniCampoActivity = InformazioniCampoActivity.class;
+        Intent intent = new Intent(getApplicationContext(), informazioniCampoActivity);
+        return intent;
+    }
+
+    private void showInformazioniAtivity() {
+        try {
+            Intent appInfoIntent = makeInformazioniIntent();
+            if (appInfoIntent != null)
+                startActivityForResult(appInfoIntent, WELCOME_USER_REQUEST);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

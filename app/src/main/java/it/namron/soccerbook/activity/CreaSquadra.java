@@ -37,20 +37,13 @@ public class CreaSquadra extends AppCompatActivity {
         buttonVicinanze.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(CreaSquadra.this, "You clicked on Vicinanze", Toast.LENGTH_LONG).show();
+                //Toast.makeText(CreaSquadra.this, "You clicked on Vicinanze", Toast.LENGTH_LONG).show();
+                showNuovaSquadraActivity();
 
             }
         });
 
 
-        buttonContatti = (Button) findViewById(R.id.button3);
-        buttonContatti.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(CreaSquadra.this, "You clicked on Contatti", Toast.LENGTH_LONG).show();
-
-            }
-        });
 
     }
     private Intent makeSquadraIntent() {
@@ -62,6 +55,22 @@ public class CreaSquadra extends AppCompatActivity {
     private void showSquadraActivity() {
         try {
             Intent appInfoIntent = makeSquadraIntent();
+            if (appInfoIntent != null)
+                startActivityForResult(appInfoIntent, WELCOME_USER_REQUEST);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Intent makeNuovaSquadraIntent() {
+        Class destinationActivity = CreaNuovaSquadra.class;
+        Intent a = new Intent(getApplicationContext(), destinationActivity);
+        return a;
+    }
+
+    private void showNuovaSquadraActivity() {
+        try {
+            Intent appInfoIntent = makeNuovaSquadraIntent();
             if (appInfoIntent != null)
                 startActivityForResult(appInfoIntent, WELCOME_USER_REQUEST);
         } catch (Exception e) {

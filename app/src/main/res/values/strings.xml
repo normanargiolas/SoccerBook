@@ -14,7 +14,26 @@
     <string name="cerca_per_distanza_s">selezionare la distanza in KM</string>
 
     <string name="field_name">Nome Campo</string>
+    <string name="seleziona_orario">Seleziona orario</string>
+    <string name="seleziona_data">Seleziona data</string>
+
 
     <string name="a11y_plant_item_image" translation_description="Accessibility text for each of the plant images shown in the 'My garden' and 'Plant list' screens.">Picture of plant</string>
 
-</resources>
+
+        <string-array name="shopping_item">
+            <item>Mario</item>
+            <item>Luca</item>
+            <item>Giovanni</item>
+            <item>Mattia</item>
+            <item>Gerardo</item>
+            <item>Salvatore</item>
+            <item>Tiziano</item>
+            <item>Simone</item>
+            <item>Gianfranco</item>
+            <item>Shahab</item>
+        </string-array>
+    </resources>
+
+
+
