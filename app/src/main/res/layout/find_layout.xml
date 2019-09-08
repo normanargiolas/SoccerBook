@@ -150,7 +150,8 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="80dp"
                         android:drawableTint="#565656"
-                        android:hint="@string/cerca_per_comune_s"
+                        android:hint="@string/cerca_per_giorno_s"
+                        android:focusable="false"
                         android:singleLine="true" />
 
 
@@ -233,7 +234,8 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="80dp"
                         android:drawableTint="#565656"
-                        android:hint="@string/cerca_per_distanza_s"
+                        android:hint="@string/cerca_per_orario_s"
+                        android:focusable="false"
                         android:singleLine="true" />
 
 

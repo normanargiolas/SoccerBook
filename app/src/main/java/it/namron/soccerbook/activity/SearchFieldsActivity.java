@@ -1,6 +1,7 @@
 package it.namron.soccerbook.activity;
 
-import android.app.AlertDialog;
+import android.content.Context;
+import android.support.v7.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,6 +28,9 @@ import static it.namron.soccerbook.constant.Constant.WELCOME_USER_REQUEST;
 
 public class SearchFieldsActivity extends AppCompatActivity {
 
+    AlertDialog.Builder builder;
+
+
     private ImageView mCercaPerData;
     private ImageView mCercaNome;
     private ImageView mCercaPerOrario;
@@ -35,12 +39,15 @@ public class SearchFieldsActivity extends AppCompatActivity {
 
     private TextView mDataText;
     private TextView mOrarioText;
+    private TextView mCercaPerNome;
 
 
     private Toast mToast;
 
     private int mYear, mMonth, mDay, mHour, mMinute;
     EditText txtDate, txtTime;
+
+    DatePickerDialog mDatePickerDialog;
 
 
     @Override
@@ -49,12 +56,13 @@ public class SearchFieldsActivity extends AppCompatActivity {
         setContentView(R.layout.find_layout);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-        mCercaNome = (ImageView) findViewById(R.id.lente_nome_image_view);
+//        mCercaNome = (ImageView) findViewById(R.id.lente_nome_image_view);
         mCercaPerData = (ImageView) findViewById(R.id.lente_comune_image_view);
         mCercaPerOrario = (ImageView) findViewById(R.id.lente_distanza_image_view);
 
         mDataText = (TextView) findViewById(R.id.cerca_per_data_text);
         mOrarioText = (TextView) findViewById(R.id.cerca_per_orario_text);
+        mCercaPerNome = (TextView) findViewById(R.id.cerca_per_nome_text);
 
         mCercaCampo = (Button) findViewById(R.id.cerca_campo_btn);
 
@@ -66,46 +74,58 @@ public class SearchFieldsActivity extends AppCompatActivity {
 //            }
 //        });
 
+        mOrarioText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ShowAlertDialogWithListview();
+            }
+        });
+
+        mDataText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selezionaDataCampo(SearchFieldsActivity.this);
+            }
+        });
+
         mCercaCampo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (mCercaPerNome.getText().toString().equals("")) {
+                    showdialogBox("Selezionare il campo", view);
+                } else {
+                    if (mDataText.getText().toString().equals("")) {
+                        showdialogBox("Selezionare la data", view);
+                    } else {
+                        if (mOrarioText.getText().toString().equals("")) {
+                            showdialogBox("Selezionare l'orario", view);
+                        } else {
+                            showFieldsActivity();
+                        }
+                    }
+                }
+            }
 
-
-
-                showFieldsActivity();
+            private void showdialogBox(String infoText, View view) {
+                builder = new AlertDialog.Builder(view.getContext());
+                builder.setMessage(infoText)
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                            }
+                        });
+                //Creating dialog box
+                AlertDialog alert = builder.create();
+                //Setting the title manually
+                alert.setTitle("Attenzione");
+                alert.show();
             }
         });
 
         mCercaPerData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent returnIntent = new Intent();
-//                returnIntent.putExtra("result", "Tutto ok");
-//                setResult(Activity.RESULT_OK, returnIntent);
-//                finish();
-                //Toast.makeText(SearchFieldsActivity.this, "You clicked on Cerca Per Comune", Toast.LENGTH_LONG).show();
-
-
-                // Get Current Date
-                final Calendar c = Calendar.getInstance();
-                mYear = c.get(Calendar.YEAR);
-                mMonth = c.get(Calendar.MONTH);
-                mDay = c.get(Calendar.DAY_OF_MONTH);
-
-
-                DatePickerDialog datePickerDialog = new DatePickerDialog(view.getContext(),
-                        new DatePickerDialog.OnDateSetListener() {
-
-                            @Override
-                            public void onDateSet(DatePicker view, int year,
-                                                  int monthOfYear, int dayOfMonth) {
-
-                                mDataText.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
-
-                            }
-                        }, mYear, mMonth, mDay);
-                datePickerDialog.show();
-
+                selezionaDataCampo(view.getContext());
             }
         });
 
@@ -115,6 +135,27 @@ public class SearchFieldsActivity extends AppCompatActivity {
                 ShowAlertDialogWithListview();
             }
         });
+    }
+
+    private void selezionaDataCampo(Context context) {
+        // Get Current Date
+        final Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+
+        mDatePickerDialog = new DatePickerDialog(context,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+
+                        mDataText.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                    }
+                }, mYear, mMonth, mDay);
+
+
+        mDatePickerDialog.show();
     }
 
     private Intent makeFieldsIntent() {

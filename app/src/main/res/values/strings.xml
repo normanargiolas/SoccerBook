@@ -10,8 +10,8 @@
     <string name="cerca_per_comune_string">cerca per comune</string>
     <string name="cerca_per_comune_s">nome comune</string>
 
-    <string name="cerca_per_distanza_string">cerca per distanza</string>
-    <string name="cerca_per_distanza_s">selezionare la distanza in KM</string>
+    <string name="cerca_per_giorno_s">seleziona il giorno</string>
+    <string name="cerca_per_orario_s">selezionare l\'orario</string>
 
     <string name="field_name">Nome Campo</string>
     <string name="seleziona_orario">Seleziona orario</string>
