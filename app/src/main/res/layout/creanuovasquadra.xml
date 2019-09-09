@@ -1,165 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="fill_parent"
-android:background="#5fb0c9"
-android:orientation="vertical"
-android:scrollbarAlwaysDrawVerticalTrack="true">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#5fb0c9">
 
 
-    <RelativeLayout
-        android:layout_width="350dp"
-        android:layout_height="131dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:background="#fff"
-        android:elevation="4dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="#5fb0c9"
         android:orientation="vertical"
-        android:padding="5dp">
+        android:scrollbarAlwaysDrawVerticalTrack="true">
 
 
-        <LinearLayout
-            android:id="@+id/cerca_per_nome_linear"
-            android:layout_width="356dp"
-            android:layout_height="115dp"
+        <RelativeLayout
+            android:layout_width="350dp"
+            android:layout_height="131dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:background="#fff"
+            android:elevation="4dp"
             android:orientation="vertical"
-            android:paddingTop="10dp">
+            android:padding="5dp">
 
 
-            <RelativeLayout
-                android:layout_width="365dp"
-                android:layout_height="50dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="13dp"
-
-                    android:layout_marginBottom="5dp"
-                    android:paddingTop="5dp"
-                    android:text="Nome squadra"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="373dp"
-                android:layout_height="63dp">
+            <LinearLayout
+                android:id="@+id/cerca_per_nome_linear"
+                android:layout_width="356dp"
+                android:layout_height="115dp"
+                android:orientation="vertical"
+                android:paddingTop="10dp">
 
 
-                <AutoCompleteTextView
-                    android:id="@+id/cerca_per_nome_text"
+                <RelativeLayout
+                    android:layout_width="365dp"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="13dp"
+
+                        android:layout_marginBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Nome squadra"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="373dp"
+                    android:layout_height="63dp">
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/cerca_per_nome_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="80dp"
+                        android:drawableTint="#565656"
+                        android:hint="inserisci nome squadra"
+                        android:singleLine="true" />
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:background="#fff"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+
+            <ScrollView
+                android:id="@+id/cerca_per_comune_scrol"
+                android:layout_width="346dp"
+                android:layout_height="121dp">
+
+                <LinearLayout
+                    android:id="@+id/cerca_per_comune_linear"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="80dp"
-                    android:drawableTint="#565656"
-                    android:hint="inserisci nome squadra"
-                    android:singleLine="true" />
+                    android:orientation="vertical"
+                    android:paddingTop="10dp">
 
 
-            </RelativeLayout>
+                    <Button
+                        android:id="@+id/btnOrder"
+                        android:layout_width="fill_parent"
+                        android:layout_height="36dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+
+                        android:text="Seleziona componenti" />
+
+                    <TextView
+                        android:id="@+id/tvItemSelected"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center" />
 
 
-        </LinearLayout>
+                </LinearLayout>
+
+            </ScrollView>
 
 
-    </RelativeLayout>
-
-<RelativeLayout
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="30dp"
-    android:layout_marginTop="30dp"
-    android:layout_marginRight="30dp"
-    android:background="#fff"
-    android:elevation="4dp"
-    android:orientation="vertical"
-    android:padding="5dp">
+        </RelativeLayout>
 
 
-    <ScrollView
-        android:id="@+id/cerca_per_comune_scrol"
-        android:layout_width="346dp"
-        android:layout_height="121dp">
-
-        <LinearLayout
-            android:id="@+id/cerca_per_comune_linear"
+        <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:background="#fff"
+            android:elevation="4dp"
             android:orientation="vertical"
-            android:paddingTop="10dp">
+            android:padding="5dp">
 
 
-            <Button
-                android:id="@+id/btnOrder"
+            <LinearLayout
+                android:id="@+id/cerca_per_comune_linear1"
                 android:layout_width="fill_parent"
-                android:layout_height="36dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-
-                android:text="Seleziona componenti" />
-
-            <TextView
-                android:id="@+id/tvItemSelected"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:gravity="center" />
+                android:orientation="vertical">
 
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/btnOrder1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:text="Crea squadra" />
 
-    </ScrollView>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/navigation" />
 
 
 </RelativeLayout>
-
-
-
-<RelativeLayout
-android:layout_width="fill_parent"
-android:layout_height="wrap_content"
-android:layout_marginLeft="30dp"
-android:layout_marginTop="30dp"
-android:layout_marginRight="30dp"
-android:background="#fff"
-android:elevation="4dp"
-android:orientation="vertical"
-android:padding="5dp">
-
-
-
-
-        <LinearLayout
-            android:id="@+id/cerca_per_comune_linear1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-           >
-
-
-            <Button
-                android:id="@+id/btnOrder1"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-
-                android:text="Crea squadra" />
-
-
-
-
-        </LinearLayout>
-
-
-
-</RelativeLayout>
-
-
-</LinearLayout>

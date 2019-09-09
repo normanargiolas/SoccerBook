@@ -1,111 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:background="#5fb0c9"
-    android:orientation="vertical"
-    android:scrollbarAlwaysDrawVerticalTrack="true">
+    android:background="#5fb0c9">
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:background="#fff"
-        android:elevation="4dp"
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="#5fb0c9"
         android:orientation="vertical"
-        android:padding="5dp">
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:background="#fff"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:padding="5dp">
 
 
-        <ScrollView
-            android:id="@+id/cerca_per_nome_scrol"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <ScrollView
+                android:id="@+id/cerca_per_nome_scrol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:id="@+id/bottoneID"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="10dp">
-
-
-                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                <LinearLayout
+                    android:id="@+id/bottoneID"
                     android:layout_width="fill_parent"
-                    android:layout_height="50dp">
-
-                    <Button
-                        android:text="Le tue squadre"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:layout_centerHorizontal="true"
-
-                        android:id="@+id/visualizza_squadre_btn"
-                        android:textColor="#ffffff"
-                        android:layout_marginTop="10dp"/>
-
-                </RelativeLayout>
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="10dp">
 
 
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp">
 
-            </LinearLayout>
+                        <Button
+                            android:id="@+id/visualizza_squadre_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
 
-        </ScrollView>
+                            android:layout_centerHorizontal="true"
+
+                            android:layout_marginTop="10dp"
+                            android:text="Le tue squadre"
+                            android:textColor="#ffffff" />
+
+                    </RelativeLayout>
 
 
-    </RelativeLayout>
+                </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
+            </ScrollView>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:background="#fff"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+
+            <ScrollView
+                android:id="@+id/cerca_per_comune_scrol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/bottoneVicinanze"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="10dp">
+
+
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp">
+
+                        <Button
+                            android:id="@+id/crea_squadre_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+
+                            android:text="Crea squadra"
+                            android:textColor="#ffffff" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:background="#fff"
-        android:elevation="4dp"
-        android:orientation="vertical"
-        android:padding="5dp">
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/navigation" />
 
 
-        <ScrollView
-            android:id="@+id/cerca_per_comune_scrol"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:id="@+id/bottoneVicinanze"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="10dp">
-
-
-                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_width="fill_parent"
-                    android:layout_height="50dp">
-
-                    <Button
-                        android:text="Crea squadra"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:layout_centerHorizontal="true"
-                        android:id="@+id/crea_squadre_btn"
-
-                        android:textColor="#ffffff"
-                        android:layout_marginTop="10dp"/>
-
-                </RelativeLayout>
-
-
-            </LinearLayout>
-
-        </ScrollView>
-
-
-    </RelativeLayout>
-
-
-</LinearLayout>
+</RelativeLayout>
